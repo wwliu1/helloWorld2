@@ -14,7 +14,7 @@ def hello():
 @app.route('/about')
 def abouto():
     return render_template('about.html')
-@app.route('/about.css')
+@app.route('/about-css')
 def about_css():
     return render_template('about-css.html')
 if __name__ == '__main__':
