@@ -1,0 +1,58 @@
+/* 1. Body styles with a cream/eggshell background */
+body {
+    font-family: sans-serif;
+    margin-top: 85px;
+    background-color: #F0EAD6;
+}
+
+/* 2. The main title is dark red */
+h1 {
+    color: #990000;
+}
+
+/* 3. Style all paragraphs with at least two rules */
+p {
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* 4. Style all level two headers with at least two rules using a blue color */
+h2 {
+    color: #3457D5;
+    font-weight: bold;
+}
+
+/* 5. Style tables with dark red borders */
+table, td, th {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #990000;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 2px 5px 0 5px;
+}
+
+/* 6. Custom ID block applied to that new paragraph */
+#extra-para {
+    font-style: italic;
+    color: #990000;
+}
+
+/* 7. Custom class rule block applied to HTML element */
+.highlight-text {
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+/* 8. Logo with width/height attributes included */
+img.logo {
+    width: 300px;
+    height: 90px;
+    text-decoration: none;
+    font-size: 28px;
+    color: #900C3F;
+    margin-left: 30px;
+    font-weight: bold;
+}
