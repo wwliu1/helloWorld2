@@ -35,7 +35,7 @@ td, th {
 }
 
 /* 6. Custom ID block applied to that new paragraph */
-#extra-para {
+p#extra-paragraph {
     font-style: italic;
     color: #990000;
 }
