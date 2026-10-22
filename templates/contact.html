@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block page_title %}Contact Us{% endblock %}
+
+{% block page_content %}
+    <h2>Contact Us</h2>
+    
+    {% if form_submitted %}
+        <!-- Thank you message and regurgitated data -->
+        <div class="alert alert-success mt-3">
+            <h4>Thank you for completing my form!</h4>
+            <hr>
+            <p><strong>First Name:</strong> {{ request.form.get('first_name') }}</p>
+            <p><strong>Last Name:</strong> {{ request.form.get('last_name') }}</p>
+            <p><strong>Email Address:</strong> {{ request.form.get('email') }}</p>
+            <p><strong>Agree to be contacted:</strong> {{ 'Yes' if request.form.get('agree_check') else 'No' }}</p>
+            
+            <a href="{{ url_for('contact') }}" class="btn btn-outline-primary mt-2">Complete form again</a>
+        </div>
+        
+    {% else %}
+        <!-- The form is displayed if not yet submitted -->
+        <form class="row g-3 mt-2" action="{{ url_for('contact') }}" method="post">
+            <div class="col-md-6">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
+            </div>
+            <div class="col-md-6">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agree_check" name="agree_check">
+                    <label class="form-check-label" for="agree_check">
+                        I agree to be contacted
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit Form</button>
+            </div>
+        </form>
+    {% endif %}
+{% endblock %}
